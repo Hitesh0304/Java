@@ -44,20 +44,24 @@ public class AQueueTest {
 
     @Test
     public void dequeueTest(){
-        //remove one element
+        addElements();
+        //remove one element from a full queue
         aq.dequeue();
-        assertFalse(aq.isFull(), "Queue should not be full after removing one element from it.");
+        assertEquals(3,aq.size);
 
         //remove all elements
         aq.dequeue();
         aq.dequeue();
         aq.dequeue();
-        assertTrue(aq.isEmpty(), "Queue should be empty after removing all the four elements from it.");
+        assertEquals(0,aq.size);
 
         //removing from an empty queue
-        String actual = aq.dequeue();
-        String exp = "queue is empty and there is nothing to be removed";
-        assertEquals(exp, actual);
+        assertThrows(IndexOutOfBoundsException.class,() -> aq.dequeue(),"exception thrown");
+
+        //adding one element and then try to remove it
+        aq.enqueue(90);
+        aq.dequeue();
+        assertEquals(0,aq.size);
     }
 
     @Test

@@ -41,16 +41,18 @@ public class AQueue {
     }
 
     //Function to remove element from queue
-    public String dequeue(){
+    public int dequeue(){
+        int numRemoved;
         if(size == 0) {
-            return ("queue is empty and there is nothing to be removed");
+            throw new IndexOutOfBoundsException ("queue is empty and there is nothing to be removed");
         } else {
+            numRemoved = arr[0];
             for(int i = 1; i < size; i++) {
                 arr[i - 1] = arr[i];
             }
             rear --;
             size --;
-            return ("Element is removed successfully.");
+            return numRemoved;
         }
     }
 
