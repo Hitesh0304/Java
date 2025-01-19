@@ -66,20 +66,18 @@ public class AQueueTest {
 
     @Test
     public void peekTest() {
+        //peek with one element in the queue
+        aq.enqueue(5);
         int actual = aq.peek();
-        assertEquals(2, actual);
+        assertEquals(5, actual);
 
         //remove first element and then call peek method
         aq.dequeue();
-        int num = aq.peek();
-        assertEquals(24, num);
+        assertThrows(IndexOutOfBoundsException.class, () -> aq.peek());
 
-        //peek from empty queue
-        aq.dequeue();
-        aq.dequeue();
-        aq.dequeue();
-        int num2 = aq.peek();
-        assertEquals(-1, num2);
+        //add one element to the queue and then peek again
+        aq.enqueue(9);
+        assertEquals(9, aq.peek());
     }
 
     @Test
@@ -90,6 +88,19 @@ public class AQueueTest {
         //remove one element
         aq.dequeue();
         assertFalse(aq.isFull(), "Queue should not be full after removing one element.");
+    }
+
+    @Test
+    public void isEmptyTest(){
+        addElements();
+        assertFalse(aq.isEmpty(), "Queue should be full after adding all the four elements in it.");
+
+        //remove all elements
+        aq.dequeue();
+        aq.dequeue();
+        aq.dequeue();
+        aq.dequeue();
+        assertTrue(aq.isEmpty(), "Queue should be empty.");
     }
 }
 

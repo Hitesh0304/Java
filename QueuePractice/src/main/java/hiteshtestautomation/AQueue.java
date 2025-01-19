@@ -44,7 +44,7 @@ public class AQueue {
     public int dequeue(){
         int numRemoved;
         if(size == 0) {
-            throw new IndexOutOfBoundsException ("queue is empty and there is nothing to be removed");
+            throw new IndexOutOfBoundsException("Queue is empty and there is nothing to be removed");
         } else {
             numRemoved = arr[0];
             for(int i = 1; i < size; i++) {
@@ -59,8 +59,7 @@ public class AQueue {
     //Function to check the front of the queue without removing it
     public int peek() {
         if(size==0) {
-            System.out.println("queue is empty");
-            return -1; //using -1 to represent null
+            throw new IndexOutOfBoundsException ("queue is empty");
         } else {
             return arr[0];
         }
