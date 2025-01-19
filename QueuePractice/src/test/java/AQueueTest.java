@@ -23,12 +23,23 @@ public class AQueueTest {
 
     @Test
     public void enqueueTest(){
-        assertFalse(aq.isEmpty(), "Queue should not be empty after adding one element in it.");
+        //adding one element to an empty queue
+        aq.enqueue(5);
+        assertEquals(1,aq.size);
+
+        //adding elements to the full capacity of the queue
+        aq.enqueue(13);
+        aq.enqueue(17);
+        aq.enqueue(29);
+        assertEquals(4,aq.size);
 
         //attempt adding to a full queue
-        String actual = aq.enqueue(3);
-        String exp = "queue is full";
-        assertEquals(exp, actual);
+        assertThrows(IndexOutOfBoundsException.class,() -> aq.enqueue(67), "Index 4 out of bounds for length 4");
+
+        //attempt removing an element and then adding a new element to the queue
+        aq.dequeue();
+        aq.enqueue(9);
+        assertEquals(4,aq.size);
     }
 
     @Test

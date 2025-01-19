@@ -3,7 +3,7 @@ package hiteshtestautomation;
 public class AQueue {
     private int [] arr;
     private int rear;
-    private int size;
+    public int size;
     private int capacity;
 
     public AQueue(int capacity) {
@@ -15,17 +15,28 @@ public class AQueue {
 
     //Function to add element to queue
     /**
-     * Check if the queue is full, if yes: throw an error and exit
+     * Check if the queue is full, if yes: throw an exception and exit
      */
-    public String enqueue(int x){
+//    public int enqueue(int x){
+//       try {
+//           arr[rear] = x;
+//           rear++;
+//           size++;
+//       } catch (Exception e) {
+//           System.out.println(e.getMessage());
+//       }
+//       return x;
+//    }
+
+    public int enqueue(int x){
         if(size == capacity) {
-            return ("queue is full");
+            throw new IndexOutOfBoundsException("Queue is full");
         }
         else {
             arr[rear] = x;
             rear++;
             size++;
-            return ("Element was added successfully.");
+            return x;
         }
     }
 
