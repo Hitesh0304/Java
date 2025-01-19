@@ -11,14 +11,15 @@ public class AQueueTest {
     @BeforeEach
     public void setup() {
         aq = new AQueue(4);
+    }
+
+    //create a helper method to add the elements instead of doing it in setup method
+    void addElements(){
         aq.enqueue(2);
         aq.enqueue(24);
         aq.enqueue(51);
         aq.enqueue(32);
     }
-
-    //create a helper method to add the elements instead of doing it in setup method
-    
 
     @Test
     public void enqueueTest(){
@@ -68,6 +69,7 @@ public class AQueueTest {
 
     @Test
     public void isFullTest(){
+        addElements();
         assertTrue(aq.isFull(), "Queue should be full after adding all the four elements in it.");
 
         //remove one element
