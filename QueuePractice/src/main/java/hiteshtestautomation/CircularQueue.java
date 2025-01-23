@@ -21,7 +21,7 @@ public class CircularQueue {
         }
         else {
             arr[rear] = num;
-            rear++;
+            rear = (rear + 1)%capacity;
             size++;
         }
         return num;
@@ -34,7 +34,7 @@ public class CircularQueue {
         }
         else {
             numRemoved = arr[front];
-            front = front + 1;
+            front = (front + 1)%capacity;
             size--;
         }
         return numRemoved;
