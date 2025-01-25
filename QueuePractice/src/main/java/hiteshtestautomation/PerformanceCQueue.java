@@ -1,10 +1,10 @@
 package hiteshtestautomation;
 
-public class PerformanceAQueue {
+public class PerformanceCQueue {
     private long startTime;
     private long endTime;
 
-    AQueue aQueue = new AQueue(1000000);
+    CircularQueue circularQueue = new CircularQueue(1000000);
 
 //    public long getStartTime() {
 //        return startTime;
@@ -25,20 +25,20 @@ public class PerformanceAQueue {
     public void enqueuePerformance() {
         startTime = System.currentTimeMillis();
         for (int i=0; i<1000000; i++) {
-            aQueue.enqueue(i);
+            circularQueue.enqueue(i);
         }
         endTime = System.currentTimeMillis();
         long timeElapsed = endTime - startTime;
-        System.out.println("Time taken for Aqueue enqueue operation: " + timeElapsed);
+        System.out.println("Time taken for Circular queue enqueue operation: " + timeElapsed);
     }
 
     public void dequeuePerformance() {
         startTime = System.currentTimeMillis();
         for (int i=0; i<1000000; i++) {
-            aQueue.dequeue();
+            circularQueue.dequeue();
         }
         endTime = System.currentTimeMillis();
         long timeElapsed = endTime - startTime;
-        System.out.println("Time taken for Aqueue dequeue operation: " + timeElapsed);
+        System.out.println("Time taken for Circular queue dequeue operation: " + timeElapsed);
     }
 }
