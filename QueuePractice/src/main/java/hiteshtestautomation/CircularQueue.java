@@ -2,10 +2,12 @@ package hiteshtestautomation;
 
 public class CircularQueue {
     private int[] arr;
-    int rear;
-    int front;
-    public int size = 0;
-    int capacity;
+    private int rear;
+    private int front;
+    private int size = 0;
+    private int capacity;
+
+
 
     public CircularQueue(int capacity) {
         arr = new int[capacity];
@@ -13,6 +15,10 @@ public class CircularQueue {
         front = 0;
         size = 0;
         this.capacity = capacity;
+    }
+
+    public int getSize() {
+        return size;
     }
 
     public int enqueue(int num) {

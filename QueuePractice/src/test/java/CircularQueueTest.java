@@ -24,7 +24,7 @@ public class CircularQueueTest {
     public void testEnqueueToEmptyQueue() {
         //adding one element to an empty queue
         cq.enqueue(5);
-        assertEquals(1, cq.size);
+        assertEquals(1, cq.getSize());
     }
 
     @Test
@@ -34,14 +34,14 @@ public class CircularQueueTest {
         cq.enqueue(17);
         cq.enqueue(29);
         cq.enqueue(49);
-        assertEquals(4, cq.size);
+        assertEquals(4, cq.getSize());
     }
 
     @Test
     public void testEnqueueToFullQueue() {
         //adding elements to the full capacity of the queue
         addElements();
-        assertEquals(4, cq.size);
+        assertEquals(4, cq.getSize());
 
         //attempt adding to a full queue
         assertThrows(IndexOutOfBoundsException.class,() -> cq.enqueue(67), "Index 4 out of bounds for length 4");
@@ -55,7 +55,7 @@ public class CircularQueueTest {
         //attempt removing an element and then adding a new element to the queue
         cq.dequeue();
         cq.enqueue(9);
-        assertEquals(4, cq.size);
+        assertEquals(4, cq.getSize());
     }
 
     @Test
@@ -63,13 +63,13 @@ public class CircularQueueTest {
         addElements();
         //remove one element from a full queue
         cq.dequeue();
-        assertEquals(3, cq.size);
+        assertEquals(3, cq.getSize());
 
         //remove all elements
         cq.dequeue();
         cq.dequeue();
         cq.dequeue();
-        assertEquals(0, cq.size);
+        assertEquals(0, cq.getSize());
 
         //removing from an empty queue
         assertThrows(IndexOutOfBoundsException.class,() -> cq.dequeue(),"exception thrown");
@@ -77,7 +77,7 @@ public class CircularQueueTest {
         //adding one element and then try to remove it
         cq.enqueue(90);
         cq.dequeue();
-        assertEquals(0, cq.size);
+        assertEquals(0, cq.getSize());
     }
 
     @Test
