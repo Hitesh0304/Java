@@ -3,6 +3,7 @@ package hiteshtestautomation;
 public class PerformanceAQueue {
     private long startTime;
     private long endTime;
+    private long timeElapsedSeconds;
 
     AQueue aQueue = new AQueue(1000000);
 
@@ -28,8 +29,8 @@ public class PerformanceAQueue {
             aQueue.enqueue(i);
         }
         endTime = System.currentTimeMillis();
-        long timeElapsed = endTime - startTime;
-        System.out.println("Time taken for Aqueue enqueue operation: " + timeElapsed);
+        timeElapsedSeconds = getTimeElapsedSeconds(startTime, endTime);
+        System.out.println("Time taken for Aqueue enqueue operation: " + timeElapsedSeconds);
     }
 
     public void dequeuePerformance() {
@@ -38,7 +39,11 @@ public class PerformanceAQueue {
             aQueue.dequeue();
         }
         endTime = System.currentTimeMillis();
-        long timeElapsed = endTime - startTime;
-        System.out.println("Time taken for Aqueue dequeue operation: " + timeElapsed);
+        timeElapsedSeconds = getTimeElapsedSeconds(startTime, endTime);
+        System.out.println("Time taken for Aqueue dequeue operation: " + timeElapsedSeconds);
+    }
+
+    private long getTimeElapsedSeconds(long startTime, long endTime) {
+        return (endTime - startTime)/1000;
     }
 }

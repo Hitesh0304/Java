@@ -3,6 +3,7 @@ package hiteshtestautomation;
 public class PerformanceCQueue {
     private long startTime;
     private long endTime;
+    private long timeElapsedSeconds;
 
     CircularQueue circularQueue = new CircularQueue(1000000);
 
@@ -28,8 +29,8 @@ public class PerformanceCQueue {
             circularQueue.enqueue(i);
         }
         endTime = System.currentTimeMillis();
-        long timeElapsed = endTime - startTime;
-        System.out.println("Time taken for Circular queue enqueue operation: " + timeElapsed);
+        timeElapsedSeconds = getTimeElapsedSeconds(startTime, endTime);
+        System.out.println("Time taken for Circular queue enqueue operation: " + timeElapsedSeconds);
     }
 
     public void dequeuePerformance() {
@@ -38,7 +39,11 @@ public class PerformanceCQueue {
             circularQueue.dequeue();
         }
         endTime = System.currentTimeMillis();
-        long timeElapsed = endTime - startTime;
-        System.out.println("Time taken for Circular queue dequeue operation: " + timeElapsed);
+        timeElapsedSeconds = getTimeElapsedSeconds(startTime, endTime);
+        System.out.println("Time taken for Circular queue dequeue operation: " + timeElapsedSeconds);
+    }
+
+    private long getTimeElapsedSeconds(long startTime, long endTime) {
+        return (endTime - startTime)/1000;
     }
 }
