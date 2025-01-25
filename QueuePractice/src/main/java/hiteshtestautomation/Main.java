@@ -77,6 +77,8 @@ public class Main {
 //        performanceAQueue.dequeuePerformance();
 
         //Performance test for circular queue operations
+//       Results: Time taken for Circular queue enqueue operation: 7
+//        Time taken for Circular queue dequeue operation: 5
         PerformanceCQueue performanceCQueue = new PerformanceCQueue();
         performanceCQueue.enqueuePerformance();
         performanceCQueue.dequeuePerformance();
