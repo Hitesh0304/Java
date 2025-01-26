@@ -4,5 +4,8 @@ public class Main {
     public static void main(String []args) {
         AStack aStack = new AStack(5);
 
+        PerformanceAStack performanceAStack = new PerformanceAStack();
+        performanceAStack.enqueuePerformance();
+        performanceAStack.dequeuePerformance();
     }
 }
