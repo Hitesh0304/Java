@@ -79,8 +79,26 @@ public class Main {
         //Performance test for circular queue operations
 //       Results: Time taken for Circular queue enqueue operation: 7
 //        Time taken for Circular queue dequeue operation: 5
-        PerformanceCQueue performanceCQueue = new PerformanceCQueue();
-        performanceCQueue.enqueuePerformance();
-        performanceCQueue.dequeuePerformance();
+//        PerformanceCQueue performanceCQueue = new PerformanceCQueue();
+//        performanceCQueue.enqueuePerformance();
+//        performanceCQueue.dequeuePerformance();
+
+        //Priority queue
+        Student student1 = new Student("A", 6,3);
+        Student student2 = new Student("B", 6,2.8);
+        Student student3 = new Student("C", 6,3.7);
+        Student student4 = new Student("D", 6,4.4);
+
+        PriorityQueue priorityQueue = new PriorityQueue(4);
+        priorityQueue.enqueue(student1);
+        priorityQueue.enqueue(student2);
+        priorityQueue.enqueue(student3);
+        priorityQueue.enqueue(student4);
+        System.out.println("Size after adding 4 students: " + priorityQueue.getSize());
+        Student stDequeued = priorityQueue.dequeue();
+        System.out.println("Name of 1st student removed: " + stDequeued.getName());
+        System.out.println("Size after removing 1 student: " + priorityQueue.getSize());
+        System.out.println("Name of 2nd student removed: " + priorityQueue.dequeue().getName());
+        System.out.println("Size after removing 2 students: " + priorityQueue.getSize());
     }
 }
