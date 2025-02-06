@@ -84,21 +84,38 @@ public class Main {
 //        performanceCQueue.dequeuePerformance();
 
         //Priority queue
+//        Student student1 = new Student("A", 6,3);
+//        Student student2 = new Student("B", 6,2.8);
+//        Student student3 = new Student("C", 6,3.7);
+//        Student student4 = new Student("D", 6,4.4);
+//
+//        PriorityQueue priorityQueue = new PriorityQueue(4);
+//        priorityQueue.enqueue(student1);
+//        priorityQueue.enqueue(student2);
+//        priorityQueue.enqueue(student3);
+//        priorityQueue.enqueue(student4);
+//        System.out.println("Size after adding 4 students: " + priorityQueue.getSize());
+//        Student stDequeued = priorityQueue.dequeue();
+//        System.out.println("Name of 1st student removed: " + stDequeued.getName());
+//        System.out.println("Size after removing 1 student: " + priorityQueue.getSize());
+//        System.out.println("Name of 2nd student removed: " + priorityQueue.dequeue().getName());
+//        System.out.println("Size after removing 2 students: " + priorityQueue.getSize());
+
+        //Priority Queue using Set
         Student student1 = new Student("A", 6,3);
         Student student2 = new Student("B", 6,2.8);
         Student student3 = new Student("C", 6,3.7);
         Student student4 = new Student("D", 6,4.4);
 
-        PriorityQueue priorityQueue = new PriorityQueue(4);
-        priorityQueue.enqueue(student1);
-        priorityQueue.enqueue(student2);
-        priorityQueue.enqueue(student3);
-        priorityQueue.enqueue(student4);
-        System.out.println("Size after adding 4 students: " + priorityQueue.getSize());
-        Student stDequeued = priorityQueue.dequeue();
-        System.out.println("Name of 1st student removed: " + stDequeued.getName());
-        System.out.println("Size after removing 1 student: " + priorityQueue.getSize());
-        System.out.println("Name of 2nd student removed: " + priorityQueue.dequeue().getName());
-        System.out.println("Size after removing 2 students: " + priorityQueue.getSize());
+        PriorityQueueUsingSet priorityQueueUsingSet = new PriorityQueueUsingSet();
+        priorityQueueUsingSet.enqueue(student1);
+        priorityQueueUsingSet.enqueue(student2);
+        priorityQueueUsingSet.enqueue(student3);
+        priorityQueueUsingSet.enqueue(student4);
+        System.out.println(priorityQueueUsingSet.students);
+
+        Student dqStudent  = priorityQueueUsingSet.dequeue();
+        System.out.println("dqStudent " + dqStudent);
+        System.out.println(priorityQueueUsingSet.students);
     }
 }
