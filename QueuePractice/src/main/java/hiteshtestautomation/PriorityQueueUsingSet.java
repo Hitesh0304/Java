@@ -1,36 +1,44 @@
 package hiteshtestautomation;
 
-import java.util.Set;
 import java.util.TreeSet;
 
 public class PriorityQueueUsingSet {
     TreeSet<Student> students;
-    int front;
-    int rear;
-    int size;
+//    int front;
+//    int rear;
+    private int size;
 
     public PriorityQueueUsingSet() {
-        front = 0;
-        rear = 0;
-        size = 0;
         students = new TreeSet<>(new GpaComparator());
+        size = students.size();
+    }
+
+    //Getter for size variable
+    public int getSize() {
+        return size;
     }
 
     public void enqueue(Student student) {
         students.add(student);
+        size = students.size();
     }
 
-    //TO DO
     public Student dequeue() {
+        if(isEmpty()) {
+            throw new IllegalStateException("Queue is empty.");
+        }
+
         Student s =  students.first();
         students.remove(s);
-        size --;
+        size = students.size();
         return s;
     }
 
-    //TO DO
     public Student peek() {
-        return null;
+        if(isEmpty()) {
+            throw new IllegalStateException("Queue is empty.");
+        }
+        return students.first();
     }
 
     public boolean isEmpty() {

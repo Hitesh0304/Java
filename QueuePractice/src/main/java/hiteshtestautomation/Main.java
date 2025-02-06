@@ -1,5 +1,6 @@
 package hiteshtestautomation;
 
+import java.sql.SQLOutput;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -113,9 +114,11 @@ public class Main {
         priorityQueueUsingSet.enqueue(student3);
         priorityQueueUsingSet.enqueue(student4);
         System.out.println(priorityQueueUsingSet.students);
+        System.out.println(priorityQueueUsingSet.getSize());
 
         Student dqStudent  = priorityQueueUsingSet.dequeue();
         System.out.println("dqStudent " + dqStudent);
         System.out.println(priorityQueueUsingSet.students);
+        System.out.println(priorityQueueUsingSet.getSize());
     }
 }
