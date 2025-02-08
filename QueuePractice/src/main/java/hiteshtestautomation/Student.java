@@ -1,7 +1,5 @@
 package hiteshtestautomation;
 
-import java.util.Comparator;
-
 public class Student implements IStudent{
     private String name;
     private double grade;
@@ -31,12 +29,5 @@ public class Student implements IStudent{
     @Override
     public String toString() {
         return name + " (GPA: " + gpa + ")";
-    }
-}
-
-class GpaComparator implements Comparator<Student> {
-    @Override
-    public int compare(Student s1, Student s2) {
-        return Double.compare(s1.getGpa(), s2.getGpa());
     }
 }

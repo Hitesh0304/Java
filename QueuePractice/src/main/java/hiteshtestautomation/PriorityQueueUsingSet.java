@@ -1,11 +1,8 @@
 package hiteshtestautomation;
-
 import java.util.TreeSet;
 
 public class PriorityQueueUsingSet {
     TreeSet<Student> students;
-//    int front;
-//    int rear;
     private int size;
 
     public PriorityQueueUsingSet() {
@@ -44,9 +41,4 @@ public class PriorityQueueUsingSet {
     public boolean isEmpty() {
         return students.isEmpty();
     }
-
-    //Not Sure if this is even applicable since there is no defined capacity
-//    public boolean isFull() {
-//
-//    }
 }
