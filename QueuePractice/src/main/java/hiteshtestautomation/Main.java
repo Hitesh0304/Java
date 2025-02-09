@@ -103,10 +103,10 @@ public class Main {
 //        System.out.println("Size after removing 2 treeSet: " + priorityQueue.getSize());
 
         //Priority Queue using Set
-        Student student1 = new Student("A", 6,3);
-        Student student2 = new Student("B", 6,2.8);
-        Student student3 = new Student("C", 6,3.7);
-        Student student4 = new Student("D", 6,4.4);
+//        Student student1 = new Student("A", 6,3);
+//        Student student2 = new Student("B", 6,2.8);
+//        Student student3 = new Student("C", 6,3.7);
+//        Student student4 = new Student("D", 6,4.4);
 
 //        PriorityQueueUsingSet priorityQueueUsingSet = new PriorityQueueUsingSet();
 //        priorityQueueUsingSet.enqueue(student1);
@@ -120,5 +120,13 @@ public class Main {
 //        System.out.println("dqStudent " + dqStudent);
 //        System.out.println(priorityQueueUsingSet.students);
 //        System.out.println(priorityQueueUsingSet.getSize());
+
+        A2Queue a2Queue = new A2Queue();
+        a2Queue.enqueue(45);
+        a2Queue.enqueue(11);
+        a2Queue.enqueue(4);
+        a2Queue.enqueue(7);
+        a2Queue.enqueue(3);
+        //a2Queue.enqueue(1);
     }
 }
