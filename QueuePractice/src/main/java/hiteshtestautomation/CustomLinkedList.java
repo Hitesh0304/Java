@@ -1,18 +1,31 @@
 package hiteshtestautomation;
 
 
-public class CustomLinkedList {
-    private Node<Integer> firstNode, secondNode, thirdNode;
+public class CustomLinkedList<T> {
+    private Node<T> head;
+    private Node<T> tail;
+    private int size;
 
     public CustomLinkedList() {
-        firstNode = new Node<>(10);
-        secondNode = new Node<>(20);
-        thirdNode = new Node<>(30);
+        head = null;
+        tail = null;
+        size = 0;
     }
 
     //adds at the end
-    public void add() {
-
+    public void addLast(T ele) {
+        Node<T> n = new Node<>(ele);
+        if(size == 0) {
+            head = n;
+            head.setNext(null);
+        }
+        else{
+            tail.setNext(n);
+        }
+        tail = n;
+        System.out.println("head " + head);
+        System.out.println("tail " + tail);
+        size++;
     }
 
     //removes the first ele
@@ -26,6 +39,11 @@ public class CustomLinkedList {
 
     public void traverse() {
 
+    }
+
+    @Override
+    public String toString() {
+        return ("");
     }
 }
 

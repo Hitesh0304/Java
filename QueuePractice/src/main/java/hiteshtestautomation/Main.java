@@ -1,6 +1,7 @@
 package hiteshtestautomation;
 
 import java.sql.SQLOutput;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -121,12 +122,23 @@ public class Main {
 //        System.out.println(priorityQueueUsingSet.students);
 //        System.out.println(priorityQueueUsingSet.getSize());
 
-        A2Queue a2Queue = new A2Queue();
-        a2Queue.enqueue(45);
-        a2Queue.enqueue(11);
-        a2Queue.enqueue(4);
-        a2Queue.enqueue(7);
-        a2Queue.enqueue(3);
+//        A2Queue a2Queue = new A2Queue();
+//        a2Queue.enqueue(45);
+//        a2Queue.enqueue(11);
+//        a2Queue.enqueue(4);
+//        a2Queue.enqueue(7);
+//        a2Queue.enqueue(3);
         //a2Queue.enqueue(1);
+
+//        LinkedList<Integer> linkedList = new LinkedList<>();
+//        linkedList.add(5);
+//        linkedList.add(10);
+//        linkedList.addFirst(1);
+//        System.out.println(linkedList);
+
+        CustomLinkedList<Integer> customLinkedList = new CustomLinkedList<>();
+        customLinkedList.addLast(4);
+        customLinkedList.addLast(5);
+        System.out.println(customLinkedList);
     }
 }
