@@ -28,22 +28,36 @@ public class CustomLinkedList<T> {
         size++;
     }
 
-    //removes the first ele
+    //removes the first ele (head)
     public void removeFirst() {
+        if(size == 0) {
+            throw new IllegalStateException("List is empty.");
+        }
 
+        head = head.getNext();
+        size--;
+
+        if (size == 0) { // If list is now empty, update tail as well
+            tail = null;
+        }
     }
 
-    public void search() {
-
+    // Peeks at the first element without removing it
+    public T peek() {
+        if(size == 0) {
+            throw new IllegalStateException("Queue is empty.");
+        }
+        return head.getVal();
     }
 
-    public void traverse() {
-
+    // Checks if the queue is empty
+    public boolean isEmpty() {
+        return size == 0;
     }
 
-    @Override
-    public String toString() {
-        return ("");
+    // Returns the size of the queue
+    public int getSize() {
+        return size;
     }
 }
 
@@ -74,6 +88,6 @@ class Node<T> {
 
     @Override
     public String toString() {
-        return "Node{" + "val=" + val + '}';
+        return "Node{" + "val=" + val + ", next=" + (next != null ? next.val : "null") + '}';
     }
 }
